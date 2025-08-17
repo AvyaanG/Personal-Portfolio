@@ -446,13 +446,20 @@ body,
 
 .section-title {
     color: #780000;
+    text-shadow: 0 0 2x  #F8EFD4,   
+                   0 0 2px  #F8EFD4,  
+                   0 0 2px  #F8EFD4,  
+                   0 0 2px #F8EFD4;
     font-size: 2.3rem;
     font-family: garamond;
     margin-bottom: 32px;
     letter-spacing: 2px;
-    text-shadow: 0 0 2px #c1121f55;
     border-bottom: 2px solid #669bbc;
     padding-bottom: 12px;
+    text-shadow: 0 0 2x  #F8EFD4,   
+                   0 0 2px  #F8EFD4,  
+                   0 0 2px  #F8EFD4,  
+                   0 0 2px #F8EFD4;
 }
 
 .membership-card, .project-card {
@@ -476,7 +483,10 @@ body,
     font-size: 1.45rem;
     font-family: garamond;
     margin-bottom: 10px;
-    text-shadow: 0 0 2px #78000044;
+    text-shadow: 0 0 2x  #F8EFD4,   
+                   0 0 2px  #F8EFD4,  
+                   0 0 2px  #F8EFD4,  
+                   0 0 2px #F8EFD4;
 }
 
 .membership-meta a {
