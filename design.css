@@ -3,7 +3,7 @@ body {
   font-family: 'Playfair Display', serif;
   background-color: #0D1B2A;
   color: #fdf0d5;
-  font-size: 1.18rem;
+  font-size: 1.25rem;
   /* background-image:
     linear-gradient(120deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.00) 50%),
     repeating-linear-gradient(
@@ -45,7 +45,7 @@ body {
 }
 
 .name h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 0.2em;
     letter-spacing: 2px;
     font-weight: 900;
@@ -57,7 +57,7 @@ body {
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #f3f1d7;
     margin-bottom: 0.5em;
     font-family: 'Playfair Display', serif;
@@ -83,7 +83,7 @@ body {
 
 .header-nav a {
     color: #FFFDD0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-family: garamond;
     text-decoration: none;
     padding: 6px 18px;
@@ -169,15 +169,95 @@ body {
 
 /* Footer styling */
 footer {
-    margin-top: 48px;
-    padding: 24px 0;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    border-top: 2px solid #669bbc;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.25);
+    background: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-bg {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #0D1B2A;
+}
+
+.footer-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1.08);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.1) brightness(0.8) contrast(1.1) blur(1px);
+    opacity: 0.8;
+    z-index: 1;
+    transition: filter 0.4s, opacity 0.4s;
+}
+
+.footer-bg:hover .footer-img {
+    filter: grayscale(0) brightness(1) contrast(1.2) blur(0px);
+    opacity: 1;
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, rgba(13,27,42,0.65) 60%, rgba(193,18,31,0.18) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 32px;
+    color: #fdf0d5;
+    font-family: 'Playfair Display', serif;
     text-align: center;
-    background: rgba(13,27,42,0.85);
-    color: #e3dcc0;
-    border-top: 1px solid #bfae6a33;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+}
+
+.footer-content h5 {
+    color: #780000;
+    font-family: garamond;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 2px #c1121f55;
+    border-bottom: 1.5px solid #669bbc;
+    padding-bottom: 8px;
+}
+
+.footer-content a {
+    color: #669bbc;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.footer-content a:hover {
+    color: #c1121f;
+}
+
+@media (max-width: 900px) {
+    .footer-bg {
+        height: 120px;
+    }
+    .footer-content {
+        padding-top: 12px;
+        font-size: 0.95rem;
+    }
 }
 
 /* Add some spacing between sections */
@@ -201,7 +281,7 @@ section {
 .text-1 {
     color: #e3dcc0;
     font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.7;
     margin: 0 0 20px 0;
     text-shadow: 0 0 1px #bfae6a22;
@@ -368,7 +448,7 @@ img:hover::after {
     background: rgba(13,27,42,0.85);
     color: #e3dcc0; /* muted cream/gold */
     font-family: garamond;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 700;
     border-bottom: 1px solid #af0404;
     letter-spacing: 1px;
@@ -391,7 +471,7 @@ h5.card-title {
 
 .card-text {
     color: #e3dcc0;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-family: 'Playfair Display', serif;
     text-shadow: 0 0 1px #bfae6a22;
 }
@@ -491,7 +571,7 @@ body,
 
 .membership-meta a {
     color: #669bbc;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     text-decoration: underline;
     transition: color 0.2s;
     text-shadow: 0 0 2x  #F8EFD4,   
@@ -502,7 +582,7 @@ body,
 
 .membership-desc {
     color: #fdf0d5;
-    font-size: 1.12rem;
+    font-size: 1.3rem;
     font-family: 'Playfair Display', serif;
     text-shadow: 0 0 2px  #F8EFD4,   
                  0 0 2px  #F8EFD4,  
@@ -579,10 +659,37 @@ body,
 
 /* Responsive adjustment */
 @media (max-width: 900px) {
-    .navbar-bg {
-        height: 180px;
+    .name h1,
+    .about .head,
+    .heading,
+    .sk,
+    .section-title {
+        font-size: 2.2rem;
     }
-    .navbar-content {
-        padding-top: 12px;
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    .text-1,
+    .membership-desc,
+    .project-desc,
+    .card-text,
+    .list li,
+    .footer-content p {
+        font-size: 1.05rem;
+    }
+    .card-header,
+    .membership-title,
+    .project-title,
+    .where,
+    .position,
+    .footer-content h5 {
+        font-size: 1.25rem;
+    }
+    .header-nav a {
+        font-size: 1.1rem;
+    }
+    .membership-meta a,
+    .footer-content a {
+        font-size: 1rem;
     }
 }
